@@ -1,12 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function TweetCard() {
+  return (
+    <div className="tweetCard">
+      <Avatar />
+      <div className="content">
+        <HandleName />
+        <Message />
+      </div>
+    </div>
+  );
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+function Avatar() {
+  return (
+    <span className="avatar">
+      <i class="fas fa-user-circle fa-3x" />
+    </span>
+  );
+}
+
+function Message() {
+  return <div className="message">This is less than 140 characters</div>;
+}
+
+function HandleName() {
+  return (
+    <span className="name-with-handle">
+      <span className="name">IDee</span>
+      <span className="handle">@itz_Giddy</span>
+    </span>
+  );
+}
+ReactDOM.render(<TweetCard />, document.getElementById("root"));
