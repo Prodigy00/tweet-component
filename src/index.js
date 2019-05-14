@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import Retweet from "./components/Retweet.js";
 
 function TweetCard() {
   return (
@@ -50,16 +51,6 @@ const Reply = () => {
   return <i className="fa fa-reply reply-button" />;
 };
 
-const Retweet = () => {
-  const [handleRetweet, setHandleRetweet] = useState({ color: "#8899a6" });
-  return (
-    <i
-      className="fa fa-retweet retweet-button"
-      style={handleRetweet}
-      onClick={() => setHandleRetweet({ color: "#28e516" })}
-    />
-  );
-};
 const Like = () => <i className="fa fa-heart like-button" />;
 const MoreOptions = () => (
   <i className="fa fa-ellipsis-h more-options-button" />
